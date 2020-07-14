@@ -1,2 +1,2 @@
 # WeatherReporting
-Compares reporting of weather from NDTC(UI) and API
+Compares reporting of weather from NDTV(UI) and API
