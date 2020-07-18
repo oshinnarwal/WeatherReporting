@@ -1,10 +1,36 @@
 package com.NDTV.PageObjects;
 
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+
+import com.NDTV.RestAPIResources.AutomationConstants;
+
 public class HomePage {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	@FindBy(how = How.ID, using = "h_sub_menu")
+	private WebElement subMenu;
+	
+	@FindBy(how = How.LINK_TEXT, using = "WEATHER")
+	private WebElement weatherMenu;
+	
+	public HomePage(WebDriver driver) {
+		
+		PageFactory.initElements(driver, this);
+		driver.manage().timeouts().implicitlyWait(AutomationConstants.GLOBAL_IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
 	}
 
+	public void selectSubmenuOnHomePage() {
+		subMenu.click();
+		
+	}
+	
+	public void selectWeatherMenuOnHomePage() {
+		weatherMenu.click();
+		
+	}
 }

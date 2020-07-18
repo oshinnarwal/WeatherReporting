@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="44" started-at="2020-07-14T22:50:02 IST" finished-at="2020-07-14T22:50:02 IST">
+  <suite name="Suite" duration-ms="18528" started-at="2020-07-18T01:15:48 IST" finished-at="2020-07-18T01:16:07 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="44" started-at="2020-07-14T22:50:02 IST" finished-at="2020-07-14T22:50:02 IST">
-      <class name="com.NDTV.Base.BaseCapabilities">
-        <test-method status="PASS" signature="Base()[pri:0, instance:com.NDTV.Base.BaseCapabilities@704a52ec]" name="Base" duration-ms="9" started-at="2020-07-14T22:50:02 IST" finished-at="2020-07-14T22:50:02 IST">
+    <test name="Test" duration-ms="18528" started-at="2020-07-18T01:15:48 IST" finished-at="2020-07-18T01:16:07 IST">
+      <class name="com.NDTV.Web.TestCases.TC01_ValidateTest">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.NDTV.Web.TestCases.TC01_ValidateTest@17d677df]" name="setUp" is-config="true" duration-ms="8430" started-at="2020-07-18T01:15:48 IST" finished-at="2020-07-18T01:15:57 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Base -->
-      </class> <!-- com.NDTV.Base.BaseCapabilities -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="launch(java.lang.String)[pri:0, instance:com.NDTV.Web.TestCases.TC01_ValidateTest@17d677df]" name="launch" duration-ms="4896" started-at="2020-07-18T01:15:57 IST" finished-at="2020-07-18T01:16:01 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Bengaluru]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launch -->
+        <test-method status="PASS" signature="apiValidateResponse()[pri:0, instance:com.NDTV.Web.TestCases.TC01_ValidateTest@17d677df]" name="apiValidateResponse" duration-ms="5146" started-at="2020-07-18T01:16:01 IST" depends-on-methods="com.NDTV.Web.TestCases.TC01_ValidateTest.launch" finished-at="2020-07-18T01:16:07 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- apiValidateResponse -->
+        <test-method status="PASS" signature="closeDriver()[pri:0, instance:com.NDTV.Web.TestCases.TC01_ValidateTest@17d677df]" name="closeDriver" is-config="true" duration-ms="0" started-at="2020-07-18T01:16:07 IST" finished-at="2020-07-18T01:16:07 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- com.NDTV.Web.TestCases.TC01_ValidateTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
