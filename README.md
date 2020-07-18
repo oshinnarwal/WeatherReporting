@@ -1,7 +1,9 @@
 # Project Title
 Weather Reporting
 This project compares weather reporting by two sources. 
+
 Source 1: The website https://ndtv.com
+
 Source 2: The public weather API https://openweathermap.org/current
 
 
