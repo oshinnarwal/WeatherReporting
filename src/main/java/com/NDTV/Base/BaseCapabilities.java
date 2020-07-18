@@ -17,7 +17,7 @@ public class BaseCapabilities {
 			System.setProperty("webdriver.chrome.driver", driverpath);
 			return new ChromeDriver();
 		} else if (browser.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "Drivers//chromedriver.exe");
+			System.setProperty("webdriver.gecko.driver", "Drivers//geckodriver.exe");
 			return new FirefoxDriver();
 		} else
 			throw new IllegalArgumentException("Browser name is invalid");
