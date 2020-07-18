@@ -1,78 +1,109 @@
 package com.NDTV.Web.TestCases;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
+import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.NDTV.Base.BaseTest;
-import com.NDTV.Base.SessionData;
 import com.NDTV.PageObjects.HomePage;
 import com.NDTV.PageObjects.WeatherPage;
 import com.NDTV.RestAPIResources.AutomationConstants;
 import com.NDTV.RestAPIResources.RestRequestResponseExtract;
+import com.NDTV.Utils.Log;
 import com.NDTV.Utils.UiUtils;
 import com.NDTV.Utils.WeatherComparator;
 
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import junit.framework.Assert;
+
 /**
  * 
+ * Test case : Validate the weather details from API response and UI and compare
+ * them
  * 
  * @author oshinnarwal
  *
  */
 public class TC01_ValidateTest extends BaseTest {
-	String temp;
-	String humidity;
-	double temperatureAPI ;
-	double humidityAPI ;
+	String temperatureOnMap;
+	String humidityOnMap;
+	double temperatureAPI;
+	double humidityAPI;
+	double tempInCelciusFromAPI;
+	JsonPath jsonPathevaluator;
 	
+
 	@Test
 	@Parameters({ "cityName" })
 	public void getUIWeatherDetails(String cityName) throws Exception {
+	
+		Log.startTestCase("getUIWeatherDetails");
 		HomePage hPage = new HomePage(driver);
 		WeatherPage wPage = new WeatherPage(driver);
+		/**
+		 * Navigating to Weather page on NDTV.com
+		 */
 		hPage.selectSubmenuOnHomePage();
 		hPage.selectWeatherMenuOnHomePage();
 		UiUtils.waitForDOMStatusWithTimeOut("complete", 10, driver);
+		/**
+		 * Validations on map/weather page on NDTV.com
+		 */
 		wPage.enterIntoSearchBox(cityName);
 		wPage.validateCheckBoxWithCityName(cityName);
 		wPage.validateTemperatureDetailsOnMap(cityName);
 		wPage.validateIfCityIsPinnedOnMap(cityName);
 		wPage.validateWeatherDetails(cityName);
-		temp = wPage.extractTemperatureFromDetails();
-		humidity = wPage.extractHumidityFromDetails();
-		System.out.println(temp);
+		temperatureOnMap = wPage.extractTemperatureFromDetails();
+		humidityOnMap = wPage.extractHumidityFromDetails();
+		Log.info("temperatureOnMap="+temperatureOnMap);
+		Log.debug("humidityOnMap="+humidityOnMap);
 
 	}
-	@Test(dependsOnMethods= {"getUIWeatherDetails"})
-	public void apiValidateResponse() throws IOException {
-		RestRequestResponseExtract req = new RestRequestResponseExtract();
-		WeatherComparator compare=new WeatherComparator();
-		Response res = req.buildRequest("GET", "WEATHERAPI", "");
 
+	@Test(dependsOnMethods = { "getUIWeatherDetails" })
+	public void getApiResponse() throws IOException {
+		RestRequestResponseExtract req = new RestRequestResponseExtract();
+		WeatherComparator compare = new WeatherComparator();
+		/**
+		 * Retrieving the response from the API
+		 */
+		Response res = req.buildRequest("GET", "WEATHERAPI", "");
 		Response resObj = req.extractResponse(res);
 
-		JsonPath jsonPathevaluator = resObj.jsonPath();
-		temperatureAPI = jsonPathevaluator.getFloat(AutomationConstants.TEMPRESPONSE);
-		humidityAPI = jsonPathevaluator.getFloat(AutomationConstants.HUMPRESPONSE);
+		jsonPathevaluator = resObj.jsonPath();
+		temperatureAPI = jsonPathevaluator.getDouble(AutomationConstants.TEMPRESPONSE);
+		humidityAPI = jsonPathevaluator.getDouble(AutomationConstants.HUMPRESPONSE);
 		System.out.println(temperatureAPI);
 
-		double tempInCelciusFromAPI = compare.temperatureConvertor(temperatureAPI);
-		
+		tempInCelciusFromAPI = compare.temperatureConvertor(temperatureAPI);
+
 		System.out.println(tempInCelciusFromAPI);
-		boolean var = compare.varianceTemperature(Double.parseDouble(temp), tempInCelciusFromAPI);
-		boolean varHum = compare.varianceTemperature( Double.parseDouble(humidity), humidityAPI);
-		
+		System.out.println(humidityAPI);
+
+	}
+
+	@Test(dependsOnMethods = { "getApiResponse" })
+	@Parameters({ "tempVar", "humidVar" })
+	public void compareWeatherFromUIandAPI(double tempVar, double humidVar) {
+		WeatherComparator compare = new WeatherComparator();
+		/**
+		 * Comparing the 2 objects temperature and humidity from api and UI
+		 */
+		boolean var = compare.varianceTemperature(Double.parseDouble(temperatureOnMap), tempInCelciusFromAPI, tempVar);
+		boolean varHum = compare.varianceTemperature(Double.parseDouble(humidityOnMap), humidityAPI, humidVar);
+
 		if (var && varHum) {
-
+			Log.info("We have successfully validated the objects from two sources");
+			
 		} else {
-
+			Log.info("We have successfully validated the objects from two sources but it looks like the temperature or humidity variance is invalid");
+			Assert.fail();
 		}
 	}
 
-	
 }

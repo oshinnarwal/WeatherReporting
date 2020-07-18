@@ -2,6 +2,7 @@ package com.NDTV.Base;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.BasicConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -21,14 +22,15 @@ public class BaseTest {
 		BaseCapabilities base=new BaseCapabilities();
 		driver=base.getDriver(browser);
 		SessionData.setDriver(driver);
-		UiUtils.launchBaseUrl(driver);
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		UiUtils.launchBaseUrl();
+		UiUtils.getMaxWindow();
+		UiUtils.applyImplicitWait();
+		BasicConfigurator.configure();
 	}
 	
 	@AfterTest
 	public void closeDriver() {
-	//	driver.quit();
+		SessionData.getDriver().quit();
 	}
 	
 }

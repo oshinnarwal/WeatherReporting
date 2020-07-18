@@ -9,6 +9,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 import com.NDTV.RestAPIResources.AutomationConstants;
+import com.NDTV.Utils.Log;
 
 public class HomePage {
 
@@ -25,11 +26,13 @@ public class HomePage {
 	}
 
 	public void selectSubmenuOnHomePage() {
+		Log.info("Clicking on the sub menu on home page");
 		subMenu.click();
 		
 	}
 	
 	public void selectWeatherMenuOnHomePage() {
+		Log.info("Clicking on the weather menu");
 		weatherMenu.click();
 		
 	}

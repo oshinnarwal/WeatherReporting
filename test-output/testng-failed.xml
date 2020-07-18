@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="com.NDTV.Utils.ExtentReporting"/>
+  </listeners>
   <test thread-count="5" name="Test(failed)">
+    <parameter name="tempVar" value="3"/>
     <parameter name="cityName" value="Bengaluru"/>
+    <parameter name="humidVar" value="10"/>
     <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.NDTV.Web.TestCases.TC01_ValidateTest">
         <methods>
-          <include name="apiValidateResponse"/>
+          <include name="getApiResponse"/>
+          <include name="getUIWeatherDetails"/>
           <include name="setUp"/>
           <include name="closeDriver"/>
+          <include name="compareWeatherFromUIandAPI" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.NDTV.Web.TestCases.TC01_ValidateTest -->
     </classes>
