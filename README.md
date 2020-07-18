@@ -1,10 +1,14 @@
 # Project Title
-
+Weather Reporting
+This project compares weather reporting by two sources. 
+Source 1: The website https://ndtv.com
+Source 2: The public weather API https://openweathermap.org/current
 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+Clone the repository into the local and import it as a maven project. The project should be build.
 
 ### Prerequisites
 
@@ -12,6 +16,7 @@ Things you need to install the software and how to install them
 
 ```
 JAVA 
+Chrome Driver compatible with the chrome browser and should be placed in Driver folder.
 ```
 
 ### Installing
