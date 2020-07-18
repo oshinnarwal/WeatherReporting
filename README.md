@@ -54,6 +54,7 @@ Add additional notes about how to deploy this on a live system
 
 # Reporting
  Extent report has been implemented as part of Reporting.
+![img](https://imgur.com/wC0hIUM.png)
 
 ## Authors
 
