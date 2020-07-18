@@ -5,18 +5,18 @@
     <listener class-name="com.NDTV.Utils.ExtentReporting"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
-    <parameter name="tempVar" value="3"/>
+    <parameter name="tempVar" value="5"/>
     <parameter name="cityName" value="Bengaluru"/>
-    <parameter name="humidVar" value="10"/>
+    <parameter name="humidVar" value="30"/>
     <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.NDTV.Web.TestCases.TC01_ValidateTest">
         <methods>
           <include name="getApiResponse"/>
-          <include name="getUIWeatherDetails"/>
+          <include name="getUIWeatherDetails" invocation-numbers="0"/>
           <include name="setUp"/>
           <include name="closeDriver"/>
-          <include name="compareWeatherFromUIandAPI" invocation-numbers="0"/>
+          <include name="compareWeatherFromUIandAPI"/>
         </methods>
       </class> <!-- com.NDTV.Web.TestCases.TC01_ValidateTest -->
     </classes>

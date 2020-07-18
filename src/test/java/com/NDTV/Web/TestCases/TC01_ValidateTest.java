@@ -60,8 +60,8 @@ public class TC01_ValidateTest extends BaseTest {
 		wPage.validateWeatherDetails(cityName);
 		temperatureOnMap = wPage.extractTemperatureFromDetails();
 		humidityOnMap = wPage.extractHumidityFromDetails();
-		Log.info("temperatureOnMap="+temperatureOnMap);
-		Log.debug("humidityOnMap="+humidityOnMap);
+		Log.info("temperature displayed On Map="+temperatureOnMap);
+		Log.debug("humidity displayed On Map="+humidityOnMap);
 
 	}
 
@@ -78,12 +78,12 @@ public class TC01_ValidateTest extends BaseTest {
 		jsonPathevaluator = resObj.jsonPath();
 		temperatureAPI = jsonPathevaluator.getDouble(AutomationConstants.TEMPRESPONSE);
 		humidityAPI = jsonPathevaluator.getDouble(AutomationConstants.HUMPRESPONSE);
-		System.out.println(temperatureAPI);
+		Log.info(temperatureAPI);
 
 		tempInCelciusFromAPI = compare.temperatureConvertor(temperatureAPI);
 
-		System.out.println(tempInCelciusFromAPI);
-		System.out.println(humidityAPI);
+		Log.info("Temperature in celcius from API "+tempInCelciusFromAPI);
+		Log.info("Humidity percentage from API "+humidityAPI);
 
 	}
 
@@ -95,7 +95,7 @@ public class TC01_ValidateTest extends BaseTest {
 		 * Comparing the 2 objects temperature and humidity from api and UI
 		 */
 		boolean var = compare.varianceTemperature(Double.parseDouble(temperatureOnMap), tempInCelciusFromAPI, tempVar);
-		boolean varHum = compare.varianceTemperature(Double.parseDouble(humidityOnMap), humidityAPI, humidVar);
+		boolean varHum = compare.varianceHumidity(Double.parseDouble(humidityOnMap), humidityAPI, humidVar);
 
 		if (var && varHum) {
 			Log.info("We have successfully validated the objects from two sources");

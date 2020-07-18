@@ -41,31 +41,31 @@ public class Log {
 	 
 	 // Need to create these methods, so that they can be called  
 	 
-	 public static void info(String message) {
+	 public static void info(Object message) {
 	 
 	 Log.info(message);
 	 
 	 }
 	 
-	 public static void warn(String message) {
+	 public static void warn(Object message) {
 	 
 	    Log.warn(message);
 	 
 	 }
 	 
-	 public static void error(String message) {
+	 public static void error(Object message) {
 	 
 	    Log.error(message);
 	 
 	 }
 	 
-	 public static void fatal(String message) {
+	 public static void fatal(Object message) {
 	 
 	    Log.fatal(message);
 	 
 	 }
 	 
-	 public static void debug(String message) {
+	 public static void debug(Object message) {
 	 
 	    Log.debug(message);
 	 

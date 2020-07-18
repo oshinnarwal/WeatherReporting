@@ -7,8 +7,8 @@
   <test thread-count="1" name="Test">
    <parameter name="browser" value="chrome"/>
     <parameter name="cityName" value="Bengaluru"/>
-     <parameter name="tempVar" value="3"/>
-      <parameter name="humidVar" value="20"/>
+     <parameter name="tempVar" value="5"/>
+      <parameter name="humidVar" value="30"/>
     <classes>
    
      
