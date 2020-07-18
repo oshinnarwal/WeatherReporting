@@ -16,7 +16,7 @@ Things you need to install the software and how to install them
 
 ```
 JAVA 
-Chrome Driver compatible with the chrome browser and should be placed in Driver folder.
+Chrome Driver compatible with the chrome browser and OS and should be placed in Driver folder in the source directory of the project.
 ```
 
 ### Installing
@@ -26,36 +26,18 @@ A step by step series of examples that tell you how to get a development env run
 Say what the step will be
 
 ```
-Give the example
+Java should be installed and path should be set in environment variables
 ```
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
-Run the TestNG.xml to run the test
+Run the TestNG.xml to run the test by right click this xml file.
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
+The test is comparing both the results by fetching from NDTV.com and API response the variance have been passed from xml. The test will pass if the diffference in the temperatures and humidity will be within variance value otherwise it will fail.
 
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Deployment
 
@@ -63,17 +45,12 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Selenium](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [Selenium](http://www.seleniumhq.org/) - The web framework used
 * [Maven](https://maven.apache.org/) - Dependency Management
+* [Rest Assured](http://rest-assured.io/) - API Integration 
+* [TestNG] - Testing Framework
 
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
