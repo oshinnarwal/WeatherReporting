@@ -52,7 +52,9 @@ Add additional notes about how to deploy this on a live system
 * [Rest Assured](http://rest-assured.io/) - API Integration 
 * [TestNG] - Testing Framework
 
-
+# Reporting
+ Extent report has been implemented as part of Reporting.
+![img](https://imgur.com/wC0hIUM.png)
 
 ## Authors
 
