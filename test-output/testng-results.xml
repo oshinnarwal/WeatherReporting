@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="21304" started-at="2020-07-18T21:20:51 IST" finished-at="2020-07-18T21:21:12 IST">
+  <suite name="Suite" duration-ms="20801" started-at="2020-08-04T22:53:55 IST" finished-at="2020-08-04T22:54:16 IST">
     <groups>
     </groups>
-    <test name="Test" duration-ms="21304" started-at="2020-07-18T21:20:51 IST" finished-at="2020-07-18T21:21:12 IST">
+    <test name="Test" duration-ms="20801" started-at="2020-08-04T22:53:55 IST" finished-at="2020-08-04T22:54:16 IST">
       <class name="com.NDTV.Web.TestCases.TC01_ValidateTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.NDTV.Web.TestCases.TC01_ValidateTest@7e2d773b]" name="setUp" is-config="true" duration-ms="14283" started-at="2020-07-18T21:20:51 IST" finished-at="2020-07-18T21:21:05 IST">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.NDTV.Web.TestCases.TC01_ValidateTest@7e2d773b]" name="setUp" is-config="true" duration-ms="14731" started-at="2020-08-04T22:53:55 IST" finished-at="2020-08-04T22:54:10 IST">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="getUIWeatherDetails(java.lang.String)[pri:0, instance:com.NDTV.Web.TestCases.TC01_ValidateTest@7e2d773b]" name="getUIWeatherDetails" duration-ms="3891" started-at="2020-07-18T21:21:05 IST" finished-at="2020-07-18T21:21:09 IST">
+        <test-method status="PASS" signature="getUIWeatherDetails(java.lang.String)[pri:0, instance:com.NDTV.Web.TestCases.TC01_ValidateTest@7e2d773b]" name="getUIWeatherDetails" duration-ms="3243" started-at="2020-08-04T22:54:10 IST" finished-at="2020-08-04T22:54:13 IST">
           <params>
             <param index="0">
               <value>
@@ -29,11 +29,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getUIWeatherDetails -->
-        <test-method status="PASS" signature="getApiResponse()[pri:0, instance:com.NDTV.Web.TestCases.TC01_ValidateTest@7e2d773b]" name="getApiResponse" duration-ms="2561" started-at="2020-07-18T21:21:09 IST" depends-on-methods="com.NDTV.Web.TestCases.TC01_ValidateTest.getUIWeatherDetails" finished-at="2020-07-18T21:21:12 IST">
+        <test-method status="PASS" signature="getApiResponse()[pri:0, instance:com.NDTV.Web.TestCases.TC01_ValidateTest@7e2d773b]" name="getApiResponse" duration-ms="2378" started-at="2020-08-04T22:54:13 IST" depends-on-methods="com.NDTV.Web.TestCases.TC01_ValidateTest.getUIWeatherDetails" finished-at="2020-08-04T22:54:15 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getApiResponse -->
-        <test-method status="PASS" signature="compareWeatherFromUIandAPI(double, double)[pri:0, instance:com.NDTV.Web.TestCases.TC01_ValidateTest@7e2d773b]" name="compareWeatherFromUIandAPI" duration-ms="1" started-at="2020-07-18T21:21:12 IST" depends-on-methods="com.NDTV.Web.TestCases.TC01_ValidateTest.getApiResponse" finished-at="2020-07-18T21:21:12 IST">
+        <test-method status="PASS" signature="compareWeatherFromUIandAPI(double, double)[pri:0, instance:com.NDTV.Web.TestCases.TC01_ValidateTest@7e2d773b]" name="compareWeatherFromUIandAPI" duration-ms="5" started-at="2020-08-04T22:54:15 IST" depends-on-methods="com.NDTV.Web.TestCases.TC01_ValidateTest.getApiResponse" finished-at="2020-08-04T22:54:15 IST">
           <params>
             <param index="0">
               <value>
@@ -49,7 +49,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- compareWeatherFromUIandAPI -->
-        <test-method status="PASS" signature="closeDriver()[pri:0, instance:com.NDTV.Web.TestCases.TC01_ValidateTest@7e2d773b]" name="closeDriver" is-config="true" duration-ms="213" started-at="2020-07-18T21:21:12 IST" finished-at="2020-07-18T21:21:12 IST">
+        <test-method status="PASS" signature="closeDriver()[pri:0, instance:com.NDTV.Web.TestCases.TC01_ValidateTest@7e2d773b]" name="closeDriver" is-config="true" duration-ms="217" started-at="2020-08-04T22:54:15 IST" finished-at="2020-08-04T22:54:16 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeDriver -->

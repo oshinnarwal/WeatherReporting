@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -39,7 +40,7 @@ public class TC01_ValidateTest extends BaseTest {
 
 	@Test
 	@Parameters({ "cityName" })
-	public void getUIWeatherDetails(String cityName) throws Exception {
+	public void getUIWeatherDetails(@Optional String cityName) throws Exception {
 	
 		Log.startTestCase("getUIWeatherDetails");
 		HomePage hPage = new HomePage(driver);
